@@ -1,0 +1,52 @@
+@import '../../fonts/Fonts.css';
+@import '../Common.css';
+@import '../MFXColors.css';
+
+.circleToggle {
+    -mfx-selected-color: -common-gradient;
+    -mfx-selected-border-color: transparent;
+    -fx-text-fill: #5E0BA8;
+}
+
+.circleToggle:selected .mfx-font-icon {
+    -mfx-color: white;
+}
+
+.circleToggle:selected .mfx-ripple-generator {
+    -mfx-paused: true;
+}
+
+.circleToggle:selected {
+    -fx-text-fill: white;
+}
+
+#starToggle {
+    -mfx-selected-color: -common-gradient;
+    -mfx-selected-border-color: transparent;
+    -fx-text-fill: #5E0BA8;
+}
+
+#starToggle:selected .mfx-font-icon {
+    -mfx-color: white;
+}
+
+#starToggle:selected .mfx-ripple-generator {
+    -mfx-paused: true;
+}
+
+#starToggle:selected {
+    -fx-text-fill: white;
+}
+
+.outline-button {
+    -fx-background-color: transparent;
+    -fx-border-color: -mfx-main-green;
+    -fx-border-radius: 3;
+
+    -fx-text-fill: -mfx-purple;
+}
+
+.outline-button:hover {
+    -fx-background-color: -mfx-main-green;
+    -fx-text-fill: white;
+}

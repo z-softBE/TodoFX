@@ -1,0 +1,25 @@
+@import '../../fonts/Fonts.css';
+@import '../Common.css';
+@import '../MFXColors.css';
+
+.todo-item-container {
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #6c757d;
+    -fx-cursor: "default";
+}
+
+.todo-item-container:hover {
+    -fx-border-color: #5ac5f6;
+    -fx-cursor: "hand";
+}
+
+.text-muted {
+    -fx-text-fill: #6c757d;
+    -fx-fill: #6c757d;
+}
+
+.text-error {
+    -fx-text-fill: #dc3545;
+    -fx-fill: #dc3545;
+}

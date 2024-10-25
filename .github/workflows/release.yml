@@ -1,0 +1,57 @@
+name: Create release
+
+# Will run after a git tag has been created
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: 'true'
+
+      - run: git lfs checkout
+
+      - name: Set up Java for building packages
+        uses: actions/setup-java@v4
+        with:
+          java-version: 23
+          distribution: 'temurin'
+
+      - name: Build packages
+        run: mvn -P build_windows_exe -DskipTests clean install
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+
+      - name: Upload JAR file
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/target/todofx_${{ github.ref_name }}.jar
+          asset_name: todofx_${{ github.ref_name }}.jar
+          asset_content_type: application/java-archive
+
+      - name: Upload ZIP file with exe
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/target/todoFX_${{ github.ref_name }}.zip
+          asset_name: todoFX_${{ github.ref_name }}.zip
+          asset_content_type: application/zip

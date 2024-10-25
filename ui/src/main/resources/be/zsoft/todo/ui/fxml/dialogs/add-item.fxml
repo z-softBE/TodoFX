@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXFilterComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.mfxcore.controls.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label maxWidth="1.7976931348623157E308" text="Task:" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </Label>
+      <MFXTextField fx:id="taskTxt" floatMode="BORDER" floatingText="Task" maxWidth="1.7976931348623157E308" promptText="Task" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" right="15.0" top="10.0" />
+         </GridPane.margin>
+      </MFXTextField>
+      <Label maxWidth="1.7976931348623157E308" text="Description:" GridPane.rowIndex="1">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </Label>
+      <Label maxWidth="1.7976931348623157E308" text="Due date:" GridPane.rowIndex="2">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </Label>
+      <Label maxWidth="1.7976931348623157E308" text="List:" GridPane.rowIndex="3">
+         <padding>
+            <Insets left="15.0" />
+         </padding>
+      </Label>
+      <TextArea fx:id="descriptionTxt" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets bottom="10.0" right="15.0" top="10.0" />
+         </GridPane.margin>
+      </TextArea>
+      <MFXDatePicker fx:id="dueDatePicker" floatMode="BORDER" floatingText="Select a date" maxWidth="1.7976931348623157E308" promptText="Select a date" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin>
+      </MFXDatePicker>
+      <MFXFilterComboBox fx:id="todoListCb" floatMode="BORDER" floatingText="Select a list" maxWidth="1.7976931348623157E308" promptText="Select a list" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin>
+      </MFXFilterComboBox>
+   </children>
+</GridPane>

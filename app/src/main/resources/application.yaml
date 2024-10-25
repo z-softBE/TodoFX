@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: TodoFX
+
+  main:
+    web-application-type: none
+
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url:
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+
+project:
+  version: @project.version@
